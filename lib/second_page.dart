@@ -22,7 +22,22 @@ class SecondPage extends StatelessWidget {
                 title: Text(values[index].peso.toString()),
                 subtitle: Text(values[index].altura.toString()),
                 leading: Icon(Icons.accessibility),
-                trailing: Icon(Icons.ac_unit),
+                trailing: Row(
+                  mainAxisAlignment: MainAxisAlignment.end,
+                  mainAxisSize: MainAxisSize.min,
+                  children: [
+                    ElevatedButton(
+                        onPressed: () {
+                          print('first icon');
+                        },
+                        child: Icon(Icons.ac_unit)),
+                    ElevatedButton(
+                        onPressed: () {
+                          print('second icon');
+                        },
+                        child: Icon(Icons.account_box_outlined))
+                  ],
+                ),
                 shape: RoundedRectangleBorder(
                     borderRadius: BorderRadius.only(
                         bottomRight: Radius.circular(10),
